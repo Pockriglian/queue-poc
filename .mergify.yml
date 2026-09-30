@@ -1,0 +1,13 @@
+queue_rules:
+  - name: default
+    merge_conditions:
+      - check-success=this-check-never-exists
+
+pull_request_rules:
+  - name: copy to stable
+    conditions:
+      - label=copy-it
+    actions:
+      copy:
+        branches:
+          - stable
