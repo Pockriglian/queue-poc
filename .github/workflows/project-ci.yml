@@ -1,0 +1,7 @@
+name: project-ci
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "the project's own test suite"
