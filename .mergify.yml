@@ -3,9 +3,9 @@ queue_rules:
     merge_conditions: []
 
 pull_request_rules:
-  - name: queue when labelled ready
+  - name: queue when the body asks for it
     conditions:
-      - label=ready
+      - body~=AUTOMERGE-PLEASE
     actions:
       queue:
         name: default
