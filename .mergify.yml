@@ -1,13 +1,11 @@
 queue_rules:
   - name: default
-    merge_conditions:
-      - check-success=this-check-never-exists
+    merge_conditions: []
 
 pull_request_rules:
-  - name: copy to stable
+  - name: queue when labelled ready
     conditions:
-      - label=copy-it
+      - label=ready
     actions:
-      copy:
-        branches:
-          - stable
+      queue:
+        name: default
